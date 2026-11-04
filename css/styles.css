@@ -58,17 +58,6 @@ button{ font: inherit; cursor: pointer; background: none; border: none; color: i
 .skip-link{ position: absolute; left: -9999px; top: 0; z-index: 999; background: var(--accent); color: #fff; padding: 12px 18px; font-weight: 600; }
 .skip-link:focus{ left: 0; }
 
-/* Faint engineering-grid backdrop */
-.bg-grid{
-  position: fixed; inset: 0; z-index: 0; pointer-events: none;
-  background-image:
-    linear-gradient(rgba(var(--accent-rgb),0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(var(--accent-rgb),0.05) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 90%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 90%);
-}
-
 /* Placeholder marker — remove the class once real content is in */
 .ph{ background: rgba(184,118,58,0.14); border-bottom: 1px dashed var(--copper); padding: 0 3px; border-radius: 3px; }
 
