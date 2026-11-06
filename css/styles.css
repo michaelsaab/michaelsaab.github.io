@@ -289,3 +289,19 @@ a.project-card:hover .project-card-link svg{ transform: translateX(3px); }
 @media (max-width: 860px){ .story{ grid-template-columns: 1fr; gap: var(--space-lg); } .story--flip .story-media{ order: 0; } }
 
 .next-project{ display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; padding: var(--space-lg) 0 0; }
+
+/* Wide story: text on top, full-width figure below (for wide schematics/layouts) */
+.story--wide{ grid-template-columns: 1fr; gap: var(--space-lg); }
+.story--wide .story-copy{ max-width: 760px; }
+.figure{ margin: 0; }
+.figure-frame{ border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); background: var(--surface); }
+.figure-frame img{ width: 100%; height: auto; }
+.figure-frame--dark{ background: #000; }
+.figure figcaption{ font-size: 14px; color: var(--text-faint); margin-top: 10px; }
+.spec-mini{ display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-top: 18px; }
+.spec-mini div{ background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 14px; }
+.spec-mini dt{ font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--text-faint); }
+.spec-mini dd{ margin: 2px 0 0; font-weight: 500; font-size: 15px; }
+.section-subhead{ font-size: clamp(26px, 3.4vw, 36px); margin-bottom: 8px; }
+.back-link{ display: flex; width: fit-content; }
+.project-hero .hero-bg-scrim{ background: linear-gradient(180deg, rgba(8,22,18,.55) 0%, rgba(8,22,18,.75) 50%, rgba(8,22,18,.92) 100%); }

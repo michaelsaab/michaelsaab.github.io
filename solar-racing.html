@@ -27,7 +27,6 @@
         <a href="index.html#projects" class="nav-link nav-dropdown-trigger is-active">Projects</a>
         <div class="nav-dropdown-menu">
           <a href="solar-racing.html" aria-current="page">MSU Solar Racing</a>
-          <a href="project-two.html">Project Two</a>
         </div>
       </div>
       <a href="index.html#interests" class="nav-link">Interests</a>
@@ -46,7 +45,7 @@
   <!-- ============ PROJECT HERO ============ -->
   <section class="hero project-hero">
     <div class="hero-bg" aria-hidden="true">
-      <div class="pcb-pattern"></div>
+      <img src="assets/images/ldo-3d.jpg" alt="">
       <div class="hero-bg-scrim"></div>
     </div>
     <div class="hero-content">
@@ -57,62 +56,92 @@
       <p class="eyebrow">Project 01 &middot; Student Team</p>
       <h1 class="hero-title">MSU Solar Racing</h1>
       <p class="hero-lede">
-        <span class="ph">Two or three sentences: what the team builds, what you work on, and how your role has grown.</span>
+        Michigan State's Solar Racing Team designs and builds a solar-powered race car. I joined in
+        September 2026 on the Sensing &amp; Data Acquisition team, where I design PCBs in Altium
+        for the car's electronics.
       </p>
       <div class="project-meta-row">
-        <span><strong>Role</strong><span class="ph">Your role / subsystem</span></span>
-        <span><strong>Team</strong>Michigan State University Solar Racing Team</span>
-        <span><strong>Timeline</strong><span class="ph">Start date</span> &ndash; Present</span>
+        <span><strong>Role</strong>Member, Sensing &amp; Data Acquisition</span>
+        <span><strong>Team</strong>MSU Solar Racing Team</span>
+        <span><strong>Timeline</strong>Sept. 2026 &ndash; Present</span>
+        <span><strong>Tools</strong>Altium Designer</span>
       </div>
     </div>
   </section>
 
-  <!-- ============ STORY SECTIONS ============ -->
   <section class="section">
     <div class="section-inner">
+      <p class="section-eyebrow">Board 01</p>
+      <h2 class="section-subhead">5&nbsp;V to 3.3&nbsp;V Regulator Board</h2>
+      <p class="section-lede" style="margin-bottom:0">
+        A compact board that takes a 5&nbsp;V input and outputs a regulated 3.3&nbsp;V rail through
+        locking connectors on each end. I designed the schematic and two-layer layout in Altium.
+      </p>
 
-      <article class="story reveal">
+      <!-- Schematic -->
+      <article class="story story--wide reveal">
         <div class="story-copy">
-          <span class="pill">Overview</span>
-          <h2>What I Work On</h2>
-          <p><span class="ph">Describe the subsystem and the problem it solves on the car.</span></p>
-          <p><span class="ph">What you personally designed, built, tested, or debugged.</span></p>
+          <span class="pill">Schematic</span>
+          <h2>Circuit Design</h2>
+          <p>
+            The board is built around a <strong>Microchip MIC5317-3.3</strong> low-dropout (LDO) regulator.
+            5&nbsp;V comes in on a 2-pin JST GH connector (J1), and the regulated 3.3&nbsp;V goes out on a
+            matching connector (J2). The regulator's enable pin is tied to the input, so it turns on whenever
+            power is applied.
+          </p>
+          <p>
+            A 1&nbsp;&micro;F ceramic capacitor on the input (C1) and another on the output (C2) keep
+            the regulator stable and filter noise on both rails.
+          </p>
+          <dl class="spec-mini">
+            <div><dt>Input</dt><dd>+5 V</dd></div>
+            <div><dt>Output</dt><dd>+3.3 V regulated</dd></div>
+            <div><dt>Regulator</dt><dd>MIC5317-3.3 LDO</dd></div>
+            <div><dt>Capacitors</dt><dd>2 &times; 1 &micro;F, 0805</dd></div>
+            <div><dt>Connectors</dt><dd>JST GH, 2-pin</dd></div>
+          </dl>
         </div>
-        <figure class="story-media" style="margin:0">
-          <div class="pcb-pattern"></div><span class="media-label">Photo / schematic / layout</span>
+        <figure class="figure">
+          <div class="figure-frame"><img src="assets/images/ldo-schematic.png" alt="Altium schematic: J1 connector feeds +5 V into a MIC5317-3.3 regulator with enable tied to input, 1 microfarad capacitors on input and output, and +3.3 V out to connector J2" loading="lazy"></div>
+          <figcaption>Schematic in Altium Designer.</figcaption>
         </figure>
       </article>
 
-      <article class="story story--flip reveal">
+      <!-- Layout -->
+      <article class="story story--wide reveal">
         <div class="story-copy">
-          <span class="pill">Technical Detail</span>
-          <h2>How It Works</h2>
-          <p><span class="ph">A deeper look: key parts, design decisions, and tradeoffs.</span></p>
-          <ul>
-            <li><span class="ph">Highlight or result</span></li>
-            <li><span class="ph">Highlight or result</span></li>
-            <li><span class="ph">Highlight or result</span></li>
-          </ul>
+          <span class="pill">PCB Layout</span>
+          <h2>Two-Layer Layout</h2>
+          <p>
+            I routed the signal traces on the top layer and poured a ground plane across the bottom layer,
+            with vias stitching the ground connections between layers. The input and output capacitors sit
+            right next to the regulator's pins to keep those current loops short.
+          </p>
         </div>
-        <figure class="story-media" style="margin:0">
-          <div class="pcb-pattern"></div><span class="media-label">Photo / schematic / layout</span>
+        <figure class="figure">
+          <div class="figure-frame figure-frame--dark"><img src="assets/images/ldo-layout.png" alt="Altium PCB layout: red top-layer traces, blue bottom-layer ground pour, ground stitching vias, and a rounded board outline" loading="lazy"></div>
+          <figcaption>PCB layout: top-layer copper in red, bottom-layer ground pour in blue.</figcaption>
         </figure>
       </article>
 
-      <article class="story reveal">
+      <!-- 3D -->
+      <article class="story story--wide reveal">
         <div class="story-copy">
-          <span class="pill">Takeaways</span>
-          <h2>What I Learned</h2>
-          <p><span class="ph">What went well, what you'd change, and what's next for you on the team.</span></p>
+          <span class="pill">3D View</span>
+          <h2>Finished Design</h2>
+          <p>
+            A 3D render of the finished board with all components placed, used to check part placement,
+            silkscreen, and connector orientation before fabrication.
+          </p>
         </div>
-        <figure class="story-media" style="margin:0">
-          <div class="pcb-pattern"></div><span class="media-label">Team or car photo</span>
+        <figure class="figure">
+          <div class="figure-frame"><img src="assets/images/ldo-3d.jpg" alt="3D render of the regulator board showing the regulator IC, two capacitors, and white JST GH connectors on each end" loading="lazy"></div>
+          <figcaption>3D render in Altium Designer.</figcaption>
         </figure>
       </article>
 
       <div class="next-project">
         <a href="index.html#projects" class="btn btn-ghost" style="color:var(--accent);border-color:var(--border)">&larr; All Projects</a>
-        <a href="project-two.html" class="btn btn-primary">Next: Project Two &rarr;</a>
       </div>
     </div>
   </section>
