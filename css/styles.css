@@ -305,3 +305,7 @@ a.project-card:hover .project-card-link svg{ transform: translateX(3px); }
 .section-subhead{ font-size: clamp(26px, 3.4vw, 36px); margin-bottom: 8px; }
 .back-link{ display: flex; width: fit-content; }
 .project-hero .hero-bg-scrim{ background: linear-gradient(180deg, rgba(8,22,18,.55) 0%, rgba(8,22,18,.75) 50%, rgba(8,22,18,.92) 100%); }
+.monogram{ position: absolute; inset: 0; display: grid; place-items: center; background: #12352d; }
+.monogram .pcb-pattern{ background-size: 200px 200px; }
+.monogram span{ position: relative; font-family: var(--font-head); font-weight: 700; font-size: 96px; letter-spacing: -0.02em; color: #fff; }
+.about-photo-frame{ aspect-ratio: 1/1; }
