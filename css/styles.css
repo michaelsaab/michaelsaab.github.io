@@ -310,3 +310,4 @@ a.project-card:hover .project-card-link svg{ transform: translateX(3px); }
 .monogram span{ position: relative; font-family: var(--font-head); font-weight: 700; font-size: 96px; letter-spacing: -0.02em; color: #fff; }
 .about-photo-frame{ aspect-ratio: 1/1; }
 .row-note{ display: block; font-family: var(--font-mono); font-size: 11.5px; font-weight: 400; letter-spacing: .04em; color: var(--copper); margin-top: 4px; }
+.about-photo-wrap .fact-list{ margin-top: 0; }
